@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  mockbin:
+    build:
+      context: .
+      args:
+        - http_proxy
+        - https_proxy
+        - no_proxy
+    ports:
+      - "8080:8080"
+  redis:
+    image: "redis"

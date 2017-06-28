@@ -30,14 +30,14 @@ module.exports = function (options, done) {
   app.use(cookieParser())
   app.use(methodOverride('__method'))
   app.use(methodOverride('X-HTTP-Method-Override'))
-  app.use('/static', express.static(path.join(__dirname, 'static')))
+  app.use('/mockbin/static', express.static(path.join(__dirname, 'static')))
 
   if (options.quiet !== true) {
     app.use(morgan('dev'))
   }
 
   // magic starts here
-  app.use('/', router(options))
+  app.use('/mockbin', router(options))
 
   app.listen(options.port)
 

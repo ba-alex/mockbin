@@ -81,9 +81,9 @@ block content
               input(type='file').form-control
 
           div.col-sm-2
-            form(method="POST", action="/bin/create")
+            form(method="POST", action="/mockbin/bin/create")
               input(type='hidden', name='response', value='')
               button(type='submit').btn.btn-primary.btn-block Create Bin
 
 block scripts
-  script(type='text/javascript', src='/static/bin/create.js')
+  script(type='text/javascript', src='../../static/bin/create.js')
